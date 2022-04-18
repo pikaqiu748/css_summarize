@@ -20,15 +20,18 @@
       /*clear属性只适用于块级元素,所以使用after伪元素清除浮动时，要设置为display:block*/
       /**或者显示的再父元素最后添加一个div并设置clear:both*/
 
-      main::after {
+      div::after {
         content: '';
         display: block;
-        width: 30px;
+        width: 100%;
         height: 30px;
         background-color: green;
+        /*必须设置position，left top bottom right才会起作用*/
+        /* top: 100px;
+        position: relative;*/
       }
 
-      main::before {
+      div::before {
         content: '';
         display: block;
         width: 30px;
@@ -39,10 +42,11 @@
   </head>
   <body>
     <main>
-      <p>fnweifvberfgvure</p>
+      <div>weogneroig</div>
     </main>
     <main>
-      <p>fnweifvberfgvure</p>
+      <div>dfwefnieo</div>
+      <div>dfwefnieo</div>
     </main>
   </body>
 </html>

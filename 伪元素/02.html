@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      div {
+        width: 200px;
+        height: 30px;
+        line-height: 30px;
+        background-color: rgb(216, 20, 52);
+        position: relative;
+      }
+
+      div::after {
+        content: '';
+        display: block;
+        width: 20px;
+        height: 20px;
+        left: 87%;
+        top: 17%;
+        position: absolute;
+        border-radius: 50%;
+        border: 1px solid;
+      }
+
+      div::before {
+        content: '';
+        display: block;
+        position: absolute;
+        top: 35%;
+        left: 88.5%;
+        width: 8px;
+        height: 8px;
+        border: 1px solid;
+        border-color: transparent rgb(200, 232, 21) rgb(200, 232, 21)
+          transparent;
+        transform: rotate(-45deg);
+        transition: 1s linear;
+      }
+
+      div:hover::before {
+        transform: rotate(315deg);
+      }
+
+      span {
+        margin-left: 3px;
+        color: #fff;
+      }
+    </style>
+  </head>
+  <body>
+    <div><span>超值折扣推荐</span></div>
+  </body>
+</html>
