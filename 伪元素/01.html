@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      main {
+        width: 200px;
+        height: 200px;
+        border: 1px solid;
+        margin-top: 5px;
+        position: relative;
+      }
+      /*伪元素的应用：
+
+      1、清除浮动：如果父元素的所有子元素都是浮动的，父元素的高度则无法撑开。可以通过对父元素添加after伪类撑开父元素高度，因为after就是其最后一个子元素。*/
+
+      /*clear属性只适用于块级元素,所以使用after伪元素清除浮动时，要设置为display:block*/
+      /**或者显示的再父元素最后添加一个div并设置clear:both*/
+
+      main::after {
+        content: '';
+        display: block;
+        width: 30px;
+        height: 30px;
+        background-color: green;
+      }
+
+      main::before {
+        content: '';
+        display: block;
+        width: 30px;
+        height: 30px;
+        background-color: red;
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <p>fnweifvberfgvure</p>
+    </main>
+    <main>
+      <p>fnweifvberfgvure</p>
+    </main>
+  </body>
+</html>

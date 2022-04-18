@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      div {
+        width: 111px;
+        height: 234px;
+        background: #444;
+        /*颜色顺序从下往上
+          */
+        background: linear-gradient(
+          45deg,
+          #2da2ff 25%,
+          #444 25%,
+          #444 50%,
+          #2da2ff 50%,
+          #2da2ff 75%,
+          #444 75%,
+          #444 100%
+        );
+        background-size: 60px 60px;
+        filter: grayscale(1);
+        animation: animateBg 1s linear infinite;
+        transition: filter 1s;
+      }
+
+      div:hover {
+        filter: grayscale(0);
+      }
+
+      @keyframes animateBg {
+        0% {
+          background-position: 0px;
+        }
+        100% {
+          background-position: 60px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div></div>
+  </body>
+</html>

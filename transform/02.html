@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        padding: 0;
+        margin: 0;
+      }
+      html,
+      body {
+        width: 100%;
+        height: 100%;
+        background: #34495e;
+      }
+      main {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+      }
+      ul {
+        display: flex;
+        justify-content: space-evenly;
+        width: 200px;
+        list-style: none;
+      }
+
+      ul li {
+        position: relative;
+      }
+
+      ul li strong {
+        background: #e67e22;
+        color: #ca0da4;
+        padding: 2px 20px;
+        cursor: pointer;
+        text-transform: uppercase;
+      }
+      ul li strong + div {
+        border: 2px solid #e67e22;
+        display: flex;
+        flex-direction: column;
+        padding: 10px 20px;
+        position: absolute;
+        /*transform-origin属性值可以是百分比、em、px等具体的值，也可以是top、right、bottom、left和center这样的关键词。*/
+        transform-origin: 0 0;
+        transform: scale(0);
+        z-index: -1;
+        transition: 0.6s;
+        background: #e67e22;
+      }
+      ul li strong + div a {
+        display: inline-block;
+        padding: 5px;
+        font-size: 1em;
+        color: #0aeb4d;
+        text-decoration: none;
+        text-transform: uppercase;
+      }
+
+      ul li:hover strong + div {
+        transform: scale(1);
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <ul>
+        <li>
+          <strong>video</strong>
+          <div>
+            <a href="">PHP</a>
+            <a href="">hdcms</a>
+            <a href="">laravel</a>
+          </div>
+        </li>
+        <li>
+          <strong>live</strong>
+          <div>
+            <a href="">houdunren</a>
+            <a href="">angular</a>
+            <a href="">css3</a>
+          </div>
+        </li>
+      </ul>
+    </main>
+  </body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      html,
+      body {
+        height: 100%;
+      }
+      body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      div {
+        height: 30px;
+        width: 30px;
+        background-color: #ccc;
+        position: relative;
+        /*阴影可以移出本身范围*/
+        box-shadow: 60px 10px red;
+      }
+
+      div::before {
+        content: '';
+        bottom: 0;
+        left: 0;
+        position: absolute;
+        width: 100%;
+        height: 3px;
+        background: red;
+        box-shadow: 0px -40px 3px forestgreen;
+      }
+    </style>
+  </head>
+  <body>
+    <div></div>
+  </body>
+</html>

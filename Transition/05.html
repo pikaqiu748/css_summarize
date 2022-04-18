@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        padding: 0;
+        margin: 0;
+      }
+
+      html,
+      body {
+        width: 100%;
+        height: 100%;
+      }
+      main {
+        width: 200px;
+        height: 200px;
+        left: 50%;
+        top: 50%;
+        position: relative;
+        transform: translate(-50%, -50%);
+      }
+      div {
+        width: 200px;
+        height: 200px;
+      }
+      div::before {
+        content: 'hello,css';
+        position: absolute;
+        width: 200px;
+        height: 200px;
+        border-radius: 10%;
+        font-size: 2em;
+        background: green;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        transition-duration: 2s;
+        /*鼠标变为小手*/
+        cursor: pointer;
+      }
+
+      div:hover::before {
+        transform: rotate(360deg);
+      }
+
+      div::after {
+        content: 'vue3';
+        position: absolute;
+        bottom: -50px;
+        width: 200px;
+        text-align: center;
+        counter-reset: red;
+        font-size: 1.8em;
+        transform: translateX(-999px) skew(60deg);
+        transition-duration: 1.5s;
+      }
+
+      div.move::after {
+        transform: translateX(0px) skew(0deg);
+      }
+    </style>
+  </head>
+
+  <body>
+    <main>
+      <div></div>
+    </main>
+    <script>
+      //当transition事件结束后触发
+      document
+        .querySelector('div')
+        .addEventListener('transitionend', function (e) {
+          document.querySelector('div').className = 'move'
+        })
+    </script>
+  </body>
+</html>

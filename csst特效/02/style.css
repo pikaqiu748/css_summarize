@@ -1,0 +1,109 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: #1e2759;
+}
+
+ul {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px;
+  box-shadow: 0 5px 25px rgba(0, 0, 0, 0.25);
+}
+
+ul li {
+  list-style: none;
+}
+
+ul li a {
+  position: relative;
+  color: #fff;
+  text-decoration: none;
+  /* 转换为行内块，并设置padding */
+  display: inline-block;
+  padding: 20px 30px;
+  z-index: 1000;
+  /* backdrop-filter属性可以让你为一个元素后面区域添加图形效果（如模糊) */
+  backdrop-filter: blur(15px);
+}
+
+ul li a ion-icon {
+  font-size: 2.5em;
+  /* pointer-event属性可以指定在什么情况下元素可以成为鼠标事件 */
+  /* 元素不会成为鼠标事件的target,设置为none */
+  /* 例如a标签设置none，则不会点击不会触发链接，但是可以通过tab选中该元素，并按下enter触发事件，如果取消href属性，则无法通过tab属性触发 */
+  /* 这里设置为none，是取消icon的hover事件，并通过事件传播传给伪元素 */
+  pointer-events: none;
+  /* none——元素不再是鼠标事件的目标，鼠标不再监听当前层,而去监听下面的层中的元素 */
+  opacity: 0.25;
+  transition: 0.25s;
+}
+
+ul li.active a ion-icon {
+  /* 当背后发光，可以减小透明度，显示更清楚 */
+  opacity: 0.9;
+}
+
+/* 第二部分 */
+
+#marker {
+  position: absolute;
+  transition: 0.5s;
+  top: 0;
+  /* width: 100px; */
+  z-index: 1;
+  background-color: #fff;
+}
+
+#marker::before {
+  content: '';
+  position: absolute;
+  top: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 50px;
+  height: 40px;
+  border-radius: 8px;
+  background: #5da6ff;
+  box-shadow: 0 0 15px #5da6ff, 0 0 30px #5da6ff, 0 0 45px #5da6ff,
+    0 0 60px #5da6ff;
+}
+
+ul li:nth-child(1).active #marker::before {
+  background: #5da6ff;
+  box-shadow: 0 0 15px #5da6ff, 0 0 30px #5da6ff, 0 0 45px #5da6ff,
+    0 0 60px #5da6ff;
+}
+
+ul li:nth-child(2).active #marker::before {
+  background: #ff0;
+  box-shadow: 0 0 15px #ff0, 0 0 30px #ff0, 0 0 45px #ff0, 0 0 60px #5ff0;
+}
+
+ul li:nth-child(3).active ~ #marker::before {
+  background: #0f0;
+  box-shadow: 0 0 15px #0f0, 0 0 30px #0f0, 0 0 45px #0f0, 0 0 60px #0f0;
+}
+
+/* 波浪号其实是 p~li====p li */
+ul li:nth-child(4).active ~ #marker::before {
+  background: #df2fff;
+  box-shadow: 0 0 15px #df2fff, 0 0 30px #df2fff, 0 0 45px #ff308f,
+    0 0 60px #df2fff;
+}
+
+ul li:nth-child(5).active ~ #marker::before {
+  background: #ff308f;
+  box-shadow: 0 0 15px #ff308f, 0 0 30px #ff308f, 0 0 45px #ff308f,
+    0 0 60px #ff308f;
+}

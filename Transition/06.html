@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        padding: 0;
+        margin: 0;
+      }
+
+      html,
+      body {
+        width: 100%;
+        height: 100%;
+      }
+      main {
+        width: 100vw;
+        height: 100vh;
+        background-color: gray;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      div {
+        width: 200px;
+        height: 200px;
+        background-color: pink;
+        border: 2px solid white;
+        transition-property: background-color, width, height, border-radius;
+        /*设置两个时间，表示transition-property奇数位置为400ms，偶数位置为2s,多个时间，会一次轮训每一个property*/
+        transition-duration: 400ms, 2s;
+      }
+
+      div:hover {
+        background-color: green;
+        border-radius: 50%;
+        width: 400px;
+        height: 400px;
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <div></div>
+    </main>
+  </body>
+</html>

@@ -1,0 +1,197 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --black-color: #333;
+  --white-color: #fff;
+}
+
+header {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  /* align-items: center; */
+  padding: 40px 100px;
+  position: absolute;
+  /* 保证header显示 */
+  z-index: 10000;
+}
+
+header .logo {
+  position: relative;
+  display: inline-flex;
+  color: var(--black-color);
+  font-size: 2em;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  text-decoration: none;
+}
+
+.rightSide {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.btns {
+  width: 40px;
+  height: 40px;
+  background: #ccc;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  margin-left: 10px;
+  position: relative;
+}
+
+.btns ion-icon {
+  font-size: 1.5em;
+  color: var(--black-color);
+}
+
+.btns.menuToggle ion-icon {
+  font-size: 3em;
+}
+
+/* 菜單显示状态转换 */
+.btns ion-icon:nth-child(2) {
+  display: none;
+}
+
+.btns.active ion-icon:nth-child(1) {
+  display: none;
+}
+
+.btns.active ion-icon:nth-child(2) {
+  display: block;
+}
+
+.dark {
+  --black-color: #fff;
+  --white-color: #333;
+}
+
+@media (max-width: 768px) {
+  header {
+    padding: 20px;
+  }
+  .copyrightText {
+    left: 20px;
+    bottom: 30px;
+  }
+
+  .sci {
+    right: 20px;
+    bottom: 20px;
+  }
+}
+
+/* 以上为header部分 */
+
+.main {
+  width: 100vw;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.main video {
+  position: absolute;
+  /* width设置为100%,且position为absolute,这样就可以让视频宽高和父元素.main一样的宽高,就不会有滚动条*/
+  width: 100%;
+  height: 100%;
+  /* object-fit 属性指定元素的内容应该如何去适应指定容器的高度与宽度。 */
+  /* object-fit 一般用于 img 和 video 标签，一般可以对这些元素进行保留原始比例的剪切、缩放或者直接进行拉伸等。 */
+  /*fill 默认，不保证保持原有的比例，内容拉伸填充整个内容容器。 */
+  /* cover:保持原有尺寸比例。但部分内容可能被剪切。 */
+  /* contain:保持原有尺寸比例。内容被缩放。 */
+  object-fit: cover;
+}
+
+/* -----------------copyright------------------------ */
+/* absolute 定位使元素的位置与文档流无关，因此不占据空间。
+absolute 定位的元素和其他元素重叠。 */
+.copyrightText {
+  position: absolute;
+  left: 100px;
+  bottom: 40px;
+  /* 颜色深浅 */
+  font-weight: 500;
+  font-size: 1.2em;
+  color: var(--black-color);
+}
+
+/* --------------应用logo------------------- */
+.sci {
+  right: 100px;
+  bottom: 40px;
+  position: absolute;
+}
+
+.sci li {
+  list-style: none;
+}
+
+.sci li a {
+  color: var(--black-color);
+  font-size: 1.75em;
+}
+
+/* ocean */
+.main h2 {
+  position: absolute;
+  font-size: 16em;
+  color: var(--white-color);
+  text-shadow: 0 20px 30px rgba(0, 0, 0, 0.2);
+}
+
+/* sidebar */
+
+.navigation {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  /* left：50%相当于他的位置是在距离父类左边框向右距离为x的位置，x等于父类宽度的50%。 */
+  left: -100%;
+  background: var(--white-color);
+  transition: 1s;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  z-index: 4;
+}
+
+.navigation.active {
+  left: 0;
+  left: 0;
+  /* 这里必须比视频的z-Index高 */
+  z-index: 5;
+}
+
+.navigation li {
+  list-style: none;
+}
+
+.navigation li a {
+  /* 一句话来描述就是 当Flex Box 容器没有设置宽度大小限制时，当display 指定为 flex 时，FlexBox 的宽度会填充父容器，当display指定为 inline-flex 时，FlexBox的宽度会包裹子Item */
+  display: inline-flex;
+  text-decoration: none;
+  margin: 5px 0;
+  color: var(--black-color);
+  padding: 5px 20px;
+  border-radius: 40px;
+}
+
+.navigation li a:hover {
+  background: var(--black-color);
+  color: var(--white-color);
+}

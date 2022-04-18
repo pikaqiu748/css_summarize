@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      main {
+        width: 100px;
+        height: 100px;
+        border: 3px solid red;
+        float: left;
+        /*使用margin-left解决边框重叠变宽*/
+        margin-left: -3px;
+      }
+      main:hover {
+        background-color: green;
+        border-color: black;
+        /*使用下面的方式可以让四边都显示出来*/
+        /* position: relative;*/
+        /*或者使用z-index*/
+        /*只有定位的盒子才有z-index属性*/
+        position: relative;
+        z-index: 3;
+      }
+    </style>
+  </head>
+  <body>
+    <main></main>
+    <main></main>
+    <main></main>
+    <main></main>
+    <main></main>
+  </body>
+</html>

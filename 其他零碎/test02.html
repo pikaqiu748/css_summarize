@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      .box1::after,
+      .box1::before {
+        content: '';
+        width: 205px;
+        height: 205px;
+        border-radius: 50%;
+        position: absolute;
+        top: -2px;
+        left: -2px;
+        z-index: -1;
+        background: linear-gradient(
+          45deg,
+          #ff00ee,
+          #0000ff,
+          #00ff00,
+          #ff0000,
+          #ff00ee,
+          #0000ff,
+          #00ff00,
+          #ffff00,
+          #ff0000
+        );
+        animation: animate 20s linear infinite;
+        background-size: 500%;
+      }
+
+      .box1::after {
+        filter: blur(20px);
+      }
+
+      @keyframes animate {
+        0% {
+          background-position: 0 0;
+        }
+
+        50% {
+          background-position: 400% 0;
+        }
+
+        100% {
+          background-position: 0 0;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="box1"></div>
+  </body>
+</html>

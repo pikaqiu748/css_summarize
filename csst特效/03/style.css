@@ -1,0 +1,109 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* 比如min-height:20px;c
+意思是说，一个块元素，高度如果小于20px，那么这个块元素就不会再自动变小，而是保持20px不变。 */
+  /* height:100vh == height:100%;
+
+但是当元素没有内容时候，设置height:100%，该元素不会被撑开，此时高度为0，
+
+但是设置height:100vh，该元素会被撑开与屏幕高度一致。
+设置height:100vh，能够保证元素无论是否有没有内容，高度都等于屏幕高度。*/
+  min-height: 100vh;
+  background: #262626;
+}
+
+.container {
+  position: relative;
+  display: flex;
+  -webkit-box-reflect: below 2px
+    linear-gradient(transparent, transparent, transparent, rgba(0, 0, 0, 0.5));
+}
+
+.container .box {
+  position: relative;
+  width: 320px;
+  height: 400px;
+  background: #444;
+  margin: 0 20px;
+  border-radius: 20px;
+  background: linear-gradient(
+    /* 用角度值指定渐变的方向（或角度）。角度顺时针增加。使用关键词：to top、to bottom、to left、to right、to top right、to top left、to bottom right和to bottom left（这些值会被转换为指定的角度值）
+使用带单位数字定义角度，比如45deg、1turn等
+    */
+      /* 下面颜色设置意思为：
+    0%到25%为Blue，25%到50%为灰色，50%到75%为蓝色，75%到100%为灰色
+    必须设置这四部分 
+     */
+      45deg,
+    #2da2ff 25%,
+    #444 25%,
+    #444 50%,
+    #2da2ff 50%,
+    #2da2ff 75%,
+    #444 75%,
+    #444 100%
+  );
+  /* 必须是正方形，斜起来才会对齐 */
+  background-size: 40px 40px;
+  /* background: no-repeat; */
+  filter: grayscale(1);
+  animation: animateBg 1s linear infinite;
+  animation-play-state: paused;
+  /* 从灰色变回亮色的过渡时间 */
+  transition: 1s filter;
+  /* ----- */
+  display: flex;
+  justify-content: center;
+}
+
+.container .box:hover {
+  /* 将动画状态设置为run */
+  animation-play-state: running;
+  /* 滤镜 */
+  filter: grayscale(0);
+}
+
+.container .box:nth-child(2) {
+  background: linear-gradient(
+    45deg,
+    #ff61ae 25%,
+    #444 25%,
+    #444 50%,
+    #ff61ae 50%,
+    #ff61ae 75%,
+    #444 75%,
+    #444 100%
+  );
+  background-size: 40px 40px;
+}
+
+@keyframes animateBg {
+  0% {
+    /* background-position仅支持背景图片的移动，不支持背景颜色（background-color）。 */
+    background-position: 0px;
+  }
+  /* 100%的时候的状态跟0%时候一样，这样才首尾算接上了,才会有循环的效果 */
+  100% {
+    /* background-position:20px 30px;也就表示图像向右偏移20px，向下偏移30px */
+    /* 设置一个值表示向右偏移40px 想 */
+    background-position: 40px;
+  }
+}
+
+.container .box ion-icon {
+  position: absolute;
+  bottom: 0;
+  height: 90%;
+  transition: height 0.5s;
+}
+
+.container .box:hover imion-icong {
+  height: 480px;
+}

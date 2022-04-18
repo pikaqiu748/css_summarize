@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+    <title>transform-origin</title>
+    <style>
+      html,
+      body {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin: 0 auto;
+        height: 100%;
+        width: 100%;
+        background-color: rgb(28, 137, 170);
+      }
+
+      .outer {
+        /**定义子元素水平居中**/
+        display: flex;
+        justify-content: center;
+        width: 100px;
+        height: 100px;
+        background-color: #c118ca8c;
+        position: relative;
+      }
+      /**竖向辅助线**/
+      .vertical-line {
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        height: 100%;
+        width: 1px;
+        background: #000;
+      }
+      /**横向辅助线**/
+      .horizontal-line {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 100%;
+        height: 1px;
+        background: #000;
+      }
+      .inner {
+        width: 20px;
+        height: 20px;
+        border-radius: 50%;
+        background-color: #e41893eb;
+        transform-origin: 50% 50px; /**50px为环绕半径*/
+        animation: an-circle 3s ease-in-out infinite;
+      }
+      @keyframes an-circle {
+        /*动画开始也可：0%=from 100%=to*/
+        to {
+          transform: rotate(1turn);
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="outer">
+      <div class="horizontal-line"></div>
+      <div class="vertical-line"></div>
+      <div class="inner"></div>
+    </div>
+    <br />
+    <p>圆周环绕动画</p>
+  </body>
+</html>

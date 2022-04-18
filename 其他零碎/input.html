@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        padding: 0;
+        margin: 2;
+      }
+      div {
+        width: 300px;
+        height: 30px;
+        border: 1px solid pink;
+        position: relative;
+      }
+      /*伪元素也是一个盒子模型，也可以通过子绝父相来进行定位*/
+      div::after {
+        content: '';
+        width: 5px;
+        height: 5px;
+        right: 10px;
+        top: 10px;
+        margin: 0;
+        border: 1px solid;
+        position: absolute;
+        border-color: transparent red red transparent;
+        transform: rotate(45deg);
+        transition: 0.7s;
+      }
+      /*记住下面作用在伪元素的写法*/
+      div:hover::after {
+        transform: rotate(225deg);
+      }
+    </style>
+  </head>
+  <body>
+    <div></div>
+  </body>
+</html>

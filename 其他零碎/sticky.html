@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      body {
+        height: 120vw;
+      }
+      main {
+        width: 600px;
+        height: 500px;
+        border: 1px solid red;
+        position: relative;
+      }
+
+      /*
+      1、父元素不能overflow:hidden或者overflow:auto属性。
+2、必须指定top、bottom、left、right4个值之一，否则只会处于相对定位
+3、父元素的高度不能低于sticky元素的高度
+4、sticky元素仅在其父元素内生效
+*/
+      .box1 {
+        width: 100px;
+        height: 100px;
+        border: 1px solid red;
+        position: sticky;
+        left: 10px;
+        top: 0px;
+      }
+      .box2 {
+        width: 100px;
+        height: 100px;
+        border: 1px solid green;
+        position: sticky;
+        left: 10px;
+        top: 130px;
+      }
+      .box3 {
+        width: 100px;
+        height: 100px;
+        border: 1px solid green;
+        position: sticky;
+        left: 10px;
+        top: 250px;
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <div class="box1"></div>
+      <div class="box2"></div>
+      <div class="box3"></div>
+    </main>
+  </body>
+</html>

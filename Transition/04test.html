@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        padding: 0;
+        margin: 0;
+      }
+
+      html,
+      body {
+        width: 100%;
+        height: 100%;
+      }
+      main {
+        width: 100vw;
+        height: 100vh;
+        background-color: gray;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+      }
+      div {
+        width: 200px;
+        height: 200px;
+        outline: blue;
+        background-color: pink;
+        /*控制某个属性,如果想要所有属性，可以直接写all*/
+        transition-property: background, width, height;
+        /*过度时间*/
+        transition-duration: 2s;
+        border: 2px solid white;
+        margin-top: 10px;
+      }
+
+      main:hover div {
+        border-radius: 50%;
+        width: 300px;
+        height: 300px;
+        border: 3px dotted yellow;
+        background-color: orange;
+      }
+
+      div:first-child {
+        transition-property: all;
+        transition-duration: 1.5s;
+      }
+
+      div:last-child {
+        transition-property: none;
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <div></div>
+      <div></div>
+    </main>
+  </body>
+</html>

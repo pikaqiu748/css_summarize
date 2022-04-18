@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      body {
+        width: 100vw;
+        height: 100vh;
+        background-color: gray;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      div {
+        width: 200px;
+        height: 200px;
+        background-color: red;
+        position: relative;
+        transform: rotate(-45deg);
+        animation: test 4s infinite;
+      }
+
+      div::before {
+        content: '';
+        display: block;
+        width: 200px;
+        height: 200px;
+        background-color: rgb(60, 255, 0);
+        border-radius: 50%;
+        top: -100px;
+        position: absolute;
+      }
+      div::after {
+        content: '';
+        display: block;
+        width: 200px;
+        height: 200px;
+        background-color: red;
+        border-radius: 50%;
+        left: 100px;
+        position: absolute;
+      }
+      div:hover::after{
+        background-color: black;
+      }
+      @keyframes test {
+        25% {
+          transform: scale(0.5);
+          background-color: pink;
+          transform: translate(100px,100px);
+        }
+        50% {
+          transform: scale(1);
+          background-color: yellow;
+        }
+        75% {
+          transform: scale(0.5);
+          background-color: blue;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div></div>
+  </body>
+</html>

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .box1 {
+        width: 100px;
+        height: 100px;
+        /*linear-gradient(颜色朝向，第一个颜色结束，第二个颜色开始，第二个颜色结束，第三个颜色开始，第三个颜色结束，第四个颜色开始)*/
+        background: linear-gradient(#58a 50%, #fb3 0);
+        /*宽度100%,高度20px*/
+        background-size: 100% 20px;
+      }
+      .box2 {
+        width: 100px;
+        height: 100px;
+        margin-top: 20px;
+        background: linear-gradient(
+          to right,
+          #58a 33%,
+          #fb3 0,
+          #fb3 66%,
+          #e45b5a 0
+        );
+        /*宽度50px，高度100%*/
+        background-size: 50px 100%;
+      }
+      .box3 {
+        width: 100px;
+        height: 100px;
+        margin-top: 20px;
+        background: linear-gradient(
+          /*这种只能45deg，才会有条纹背景*/ 45deg,
+          red 25%,
+          yellow 25%,
+          yellow 50%,
+          green 50%,
+          green 75%,
+          purple 75%,
+          purple 100%
+        );
+        /*宽高默认100%,不然只是重复小图形*/
+        background-size: 100px 100px;
+      }
+
+      /*使用repeating-linear-gradient()可以任意角度实现条纹背景,且不需要使用background-size,但必须写明每一个颜色范围值*/
+      .box4 {
+        width: 100px;
+        height: 100px;
+        margin-top: 20px;
+        background: repeating-linear-gradient(
+          45deg,
+          red 25%,
+          yellow 25%,
+          yellow 50%,
+          green 50%,
+          green 75%,
+          red 75%,
+          red 100%
+        );
+        /*宽高默认100%*/
+        /*background-size: 100px 100px;*/
+      }
+    </style>
+  </head>
+  <body>
+    <div class="box1"></div>
+    <div class="box2"></div>
+    <div class="box3"></div>
+    <div class="box4"></div>
+  </body>
+</html>

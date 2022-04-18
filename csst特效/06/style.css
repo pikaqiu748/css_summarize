@@ -1,0 +1,44 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  overflow: hidden;
+}
+
+section {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: radial-gradient(#f00, rgba(0, 0, 0, 0.5)), url('wall.jpg');
+  background-blend-mode: multiply;
+}
+
+section::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 600px;
+  height: 600px;
+  background: radial-gradient(rgba(255, 0, 0, 0.75), transparent, transparent);
+  border-radius: 50%;
+}
+
+
+section::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 800px;
+  height: 800px;
+  background: radial-gradient(rgba(255, 0, 0, 0.75), transparent, transparent);
+  border-radius: 50%;
+}
