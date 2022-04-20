@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .container {
+        width: 300px;
+        border: 1px solid #000;
+        display: flex;
+        flex-wrap: wrap;
+      }
+      .box {
+        width: 66px;
+        height: 66px;
+        margin-bottom: 10px;
+        background-color: rgb(148, 148, 131);
+      }
+
+      /*关键通过这个来完成，即只要不要4的倍数位置上的Box都设置margin-right，不过需要计算好box大小和margin大小*/
+      .box:not(:nth-child(4n)) {
+        margin-right: 12px;
+      }
+    </style>
+  </head>
+  <body>
+    <main class="container">
+      <div class="box"></div>
+      <div class="box"></div>
+      <div class="box"></div>
+      <div class="box"></div>
+      <div class="box"></div>
+      <div class="box"></div>
+      <div class="box"></div>
+      <div class="box"></div>
+      <div class="box"></div>
+      <div class="box"></div>
+    </main>
+  </body>
+</html>
