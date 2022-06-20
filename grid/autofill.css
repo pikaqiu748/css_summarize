@@ -1,0 +1,41 @@
+.main {
+  display: grid;
+  border: 1px solid skyblue;
+  /*根据窗口大小自适应一行的个数 */
+  grid-template-columns: repeat(auto-fill, 100px);
+  grid-template-rows: 100px 100px 100px 100px;
+}
+
+.item {
+  font-size: 50px;
+  background-color: #e91e63;
+  color: #fff;
+}
+
+.item-1 {
+  background-color: #f626;
+}
+.item-2 {
+  background-color: #f17f26;
+}
+.item-3 {
+  background-color: #f24636;
+}
+.item-4 {
+  background-color: #f64267;
+}
+.item-6 {
+  background-color: #f156;
+}
+.item-7 {
+  background-color: red;
+}
+.item-8 {
+  background-color: green;
+}
+.item-9 {
+  background-color: purple;
+}
+.item-10 {
+  background-color: blue;
+}

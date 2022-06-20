@@ -6,34 +6,28 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
     <style>
-      * {
-        margin: 0;
-        padding: 0;
-      }
       main {
-        border: 1px solid green;
+        display: grid;
+        justify-content: start;
+        align-content: center;
+        grid-template-rows: repeat(3, 1fr);
+        grid-template-columns: repeat(3, 1fr);
       }
       div {
         width: 200px;
-        height: 100px;
-        border: 1px solid;
-        float: left;
-      }
-
-      .clearfix::after,
-      .clearfix::before {
-        content: '';
-        display: block;
-        clear: both;
-        height: 0;
-        font-size: 0;
-        visibility: hidden;
-        overflow: hidden;
+        height: 200px;
+        border: 1px solid red;
       }
     </style>
   </head>
   <body>
-    <main class="clearfix">
+    <main>
+      <div>
+        <p>dfweifb</p>
+      </div>
+      <div></div>
+      <div></div>
+      <div></div>
       <div></div>
       <div></div>
     </main>

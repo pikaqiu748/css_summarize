@@ -1,0 +1,63 @@
+.main {
+  display: grid;
+  border: 1px solid skyblue;
+
+  /* 第一列100px 第三列100px  第二列自适应 */
+  grid-template-columns: 100px 100px 100px;
+  grid-template-rows: 100px 100px 100px 100px;
+
+  /* 所有item相对于大盒子的对齐方式 ，类似于flex*/
+  justify-content: space-evenly;
+  align-items: center;
+
+  grid-template-areas: 'a a a' 'b b b' 'c c c';
+  /* justify-items: end; */
+}
+
+.item {
+  font-size: 50px;
+  background-color: #e91e63;
+  color: #fff;
+}
+
+.item-1 {
+  background-color: #f626;
+  /* 指定该item从一个列间隔线开始 ，三行列线,说白了就是设置跨列*/
+  grid-column-start: 2;
+  /* 占有的线结束位置为第四根线 */
+  grid-column-end: 4;
+  /*以上两个属性的简写 */
+  /* grid-column: 2/4; */
+  /* -ms-grid-column-span:2; */
+
+  /* 将item1放在b区 ，所以1下来了*/
+  /* grid-area: b; */
+}
+.item-2 {
+  background-color: #f17f26;
+  /* 单独设置某个孩子相对于自己小盒子的定位 */
+  /* justify-self: left; */
+  /* justify-self: center; */
+  justify-self: right;
+}
+.item-3 {
+  background-color: #f24636;
+}
+.item-4 {
+  background-color: #f64267;
+}
+.item-6 {
+  background-color: #f156;
+}
+.item-7 {
+  background-color: red;
+}
+.item-8 {
+  background-color: green;
+}
+.item-9 {
+  background-color: purple;
+}
+.item-10 {
+  background-color: blue;
+}

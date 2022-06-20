@@ -1,0 +1,50 @@
+.main {
+  display: grid;
+  border: 1px solid skyblue;
+
+  /* 第一列100px 第三列100px  第二列自适应 */
+  grid-template-columns: 100px 100px 100px;
+  grid-template-rows: 100px 100px 100px 100px;
+
+  /* 只设置这里，还要设置宽度 ,每个item都有一个自己的小盒子，这里的justify-items: center;就是设置每个item对于自己的盒子居中对齐*/
+  justify-items: center;
+  /* 设置每个item对于自己的盒子垂直对齐 */
+  align-items: center;
+
+  /* 上面两个的缩写 */
+  /* place-items: center center; */
+}
+
+.item {
+  font-size: 50px;
+  background-color: #e91e63;
+  color: #fff;
+}
+
+.item-1 {
+  background-color: #f626;
+}
+.item-2 {
+  background-color: #f17f26;
+}
+.item-3 {
+  background-color: #f24636;
+}
+.item-4 {
+  background-color: #f64267;
+}
+.item-6 {
+  background-color: #f156;
+}
+.item-7 {
+  background-color: red;
+}
+.item-8 {
+  background-color: green;
+}
+.item-9 {
+  background-color: purple;
+}
+.item-10 {
+  background-color: blue;
+}

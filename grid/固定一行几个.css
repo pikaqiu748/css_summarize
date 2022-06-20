@@ -1,0 +1,44 @@
+.main {
+  display: grid;
+  width: 600px;
+  height: 600px;
+  border: 1px solid skyblue;
+  /* 以下两种写法相同 */
+  /* grid-template-columns: 100px 100px 100px; */
+  grid-template-columns: repeat(3,100px);
+  grid-template-rows: 100px 100px 100px 100px;
+}
+
+.item {
+  font-size: 50px;
+  background-color: #e91e63;
+  color: #fff;
+}
+
+.item-1 {
+  background-color: #f626;
+}
+.item-2 {
+  background-color: #f17f26;
+}
+.item-3 {
+  background-color: #f24636;
+}
+.item-4 {
+  background-color: #f64267;
+}
+.item-6 {
+  background-color: #f156;
+}
+.item-7 {
+  background-color: red;
+}
+.item-8 {
+  background-color: green;
+}
+.item-9 {
+  background-color: purple;
+}
+.item-10 {
+  background-color: blue;
+}

@@ -1,0 +1,63 @@
+.main {
+  display: grid;
+  border: 1px solid skyblue;
+
+  /*根据窗口大小自适应一行的个数 */
+  /* grid-template-columns: repeat(4, 1fr); */
+
+  /* 三列，1:2:3的比例 */
+  /* grid-template-columns: 1fr 2fr 3fr; */
+
+  /* 两列，第二列最小不能小于150px */
+  /* grid-template-columns: 1fr minmax(150px, 1fr); */
+
+  /* 第一列100px 第三列100px  第二列自适应 */
+  grid-template-columns: 100px auto 100px;
+
+  grid-template-rows: 100px 100px 100px 100px;
+
+  /* 区域，abc分别表示第一行的三个，为一个area,其他类似 ，可以用来设置某个区域*/
+  grid-template-areas: 'a b c' 'd e f' 'g h i';
+
+  /* 设置排列方向 */
+  /* grid-auto-flow: row; */
+  grid-auto-flow: column;
+
+  /* 列间距和行间距 */
+  row-gap: 10px;
+  column-gap: 10px;
+}
+
+.item {
+  font-size: 50px;
+  background-color: #e91e63;
+  color: #fff;
+}
+
+.item-1 {
+  background-color: #f626;
+}
+.item-2 {
+  background-color: #f17f26;
+}
+.item-3 {
+  background-color: #f24636;
+}
+.item-4 {
+  background-color: #f64267;
+}
+.item-6 {
+  background-color: #f156;
+}
+.item-7 {
+  background-color: red;
+}
+.item-8 {
+  background-color: green;
+}
+.item-9 {
+  background-color: purple;
+}
+.item-10 {
+  background-color: blue;
+}
